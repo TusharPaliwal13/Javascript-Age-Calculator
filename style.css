@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('background.jpeg');
+    background-size: cover; /* Ensures the image covers the container while maintaining aspect ratio */
+    background-position: center; /* Center the image to handle different screen sizes */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    padding: 10px;
+    color: linear-gradient(171deg, rgba(255, 255, 255, 1) 0%, rgba(0, 0, 0, 1) 100%);
+}
+
+.calculator {
+    width: 100%;
+    max-width: 600px;
+    margin-left: 10%;
+    margin-top: 10%;
+}
+
+.calculator h1 {
+    font-size: 60px;
+    font-family: 'Archivo Black';
+}
+
+.calculator h1 span {
+    font-size: 72px;
+    background: #54370f;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 0px;
+    -webkit-text-stroke-color: black;
+}
+
+.input-box {
+    margin: 40px 0;
+    padding: 35px;
+    border-radius: 10px;
+    background: -webkit-radial-gradient(#ffffff, #e3cd94);
+    display: flex;
+    align-items: center;
+}
+
+.input-box input {
+    flex: 1;
+    margin-right: 20px;
+    padding: 14px 20px;
+    border: 0;
+    outline: 0;
+    font-size: 18px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.input-box button {
+    background: #54370f;
+    border: 0;
+    outline: 0;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-weight: 500;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.7s ease, transform 0.7s ease;
+}
+
+.input-box button:hover {
+    background-color: #fff;
+    color: #54370f;
+    transform: scale(1.05);
+}
+
+.input-box input::-webkit-calendar-picker-indicator {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    position: absolute;
+    background-position: calc(100% - 10px);
+    background-size: 30px;
+    cursor: pointer;
+}
+
+#result {
+    font-size: 30px;
+    font-weight: 500;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+#result span {
+    color: #e3cd94;
+    font-weight: bold;
+    opacity: 0;
+    animation: revealText 3s ease-in-out forwards;
+    animation-delay: 1s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes revealText {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+ 
+
+/* Media Queries */
+@media screen and (max-width: 1100px) {
+    .calculator {
+        margin-left: 5%;
+        margin-top: 8%;
+    }
+
+    .calculator h1 {
+        font-size: 50px;
+    }
+
+    .calculator h1 span {
+        font-size: 60px;
+    }
+
+    .input-box {
+        padding: 30px;
+    }
+
+    #result {
+        font-size: 28px;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .calculator {
+        margin-left: 5%;
+        margin-top: 7%;
+    }
+
+    .calculator h1 {
+        font-size: 40px;
+    }
+
+    .calculator h1 span {
+        font-size: 50px;
+    }
+
+    .input-box {
+        padding: 25px;
+    }
+
+    #result {
+        font-size: 26px;
+    }
+}
+
+@media only screen and (max-width: 690px) {
+    .input-box {
+        flex-direction: column; /* Stack items vertically */
+        padding: 20px; /* Reduce padding for smaller screens */
+    }
+
+    .input-box input {
+        margin-right: 0; /* Remove right margin for stacked input */
+        margin-bottom: 10px; /* Add some space below the input */
+        padding: 12px 16px; /* Adjust padding for smaller inputs */
+        font-size: 16px; /* Adjust font size for smaller screens */
+    }
+
+    .input-box button {
+        padding: 12px 20px; /* Adjust button padding */
+        width: 100%; /* Make the button take full width */
+    }
+
+    #result {
+        font-size: 24px; /* Adjust result font size for small screens */
+    }
+
+    .input-box input::-webkit-calendar-picker-indicator{
+        background-size: 25px;
+        margin: 2px 2px 2px 2px;
+    }
+}
+
+
+@media screen and (max-width: 650px) {
+    .calculator {
+        margin-left: 4%;
+        margin-top: 6%;
+    }
+
+    .calculator h1 {
+        font-size: 35px;
+    }
+
+    .calculator h1 span {
+        font-size: 45px;
+    }
+
+    .input-box {
+        padding: 20px;
+    }
+
+    .input-box input {
+        font-size: 16px;
+    }
+
+    #result {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .calculator {
+        margin-left: 2%;
+        margin-top: 5%;
+    }
+
+    .calculator h1 {
+        font-size: 30px;
+    }
+
+    .calculator h1 span {
+        font-size: 40px;
+    }
+
+    .input-box {
+        flex-direction: column;
+        padding: 15px;
+        width: 100%; /* Ensure the input box takes the full width of the container */
+    }
+
+    .input-box input {
+        margin-right: 0;
+        margin-bottom: 10px;
+        font-size: 14px;
+        width: 100%; /* Force input to take full width */
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    .input-box button {
+        padding: 10px 20px;
+        width: 100%; /* Button will also take full width */
+    }
+}
+
+/* Additional media queries for further adjustments */
+
+@media screen and (max-width: 1100px) {
+    .container {
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .container {
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        background-size: cover;
+        background-position: top; /* Adjust position for smaller screens */
+    }
+}
