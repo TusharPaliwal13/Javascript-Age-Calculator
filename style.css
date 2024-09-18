@@ -110,7 +110,7 @@
   -webkit-text-stroke-color: black;
     opacity: 0;
     animation: revealText 2s ease-in-out forwards;
-    animation-delay: 1s;
+    
 }
 
 @keyframes fadeIn {
