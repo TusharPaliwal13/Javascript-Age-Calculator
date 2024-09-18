@@ -18,7 +18,7 @@
     background-position: center; /* Center the image to handle different screen sizes */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     padding: 10px;
-    color: linear-gradient(171deg, rgba(255, 255, 255, 1) 0%, rgba(0, 0, 0, 1) 100%);
+    color: linear-gradient(171deg, rgba(255, 255, 255, 1) 0%, rgba(0, 0, 0, 1) 100%);   
 }
 
 .calculator {
@@ -49,6 +49,7 @@
     background: -webkit-radial-gradient(#ffffff, #e3cd94);
     display: flex;
     align-items: center;
+    
 }
 
 .input-box input {
@@ -78,6 +79,8 @@
     background-color: #fff;
     color: #54370f;
     transform: scale(1.05);
+    backdrop-filter: blur(10px) ;
+    
 }
 
 .input-box input::-webkit-calendar-picker-indicator {
@@ -97,14 +100,16 @@
     font-size: 30px;
     font-weight: 500;
     opacity: 0;
-    animation: fadeIn 2s ease-in-out forwards;
+    animation: revealText 2s ease-in-out forwards;
 }
 
 #result span {
     color: #e3cd94;
     font-weight: bold;
+    -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: black;
     opacity: 0;
-    animation: revealText 3s ease-in-out forwards;
+    animation: revealText 2s ease-in-out forwards;
     animation-delay: 1s;
 }
 
